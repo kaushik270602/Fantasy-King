@@ -1,0 +1,161 @@
+/* Register page uses the same styles as Login */
+@import './Login.css';
+
+/* Override auth-container padding for register page */
+.auth-container {
+  padding-top: calc(70px + var(--space-6)); /* Account for fixed navbar */
+}
+
+/* Additional Register-specific styles */
+.auth-logo h1 {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Form validation styles */
+.form-input:invalid {
+  border-color: var(--error);
+}
+
+.form-input:valid {
+  border-color: var(--success);
+}
+
+/* Password strength indicator (for future enhancement) */
+.password-strength {
+  margin-top: var(--space-2);
+  height: 4px;
+  background: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.password-strength-bar {
+  height: 100%;
+  transition: var(--transition-normal);
+  border-radius: var(--radius-full);
+}
+
+.password-strength-weak {
+  background: var(--error);
+  width: 25%;
+}
+
+.password-strength-medium {
+  background: var(--warning);
+  width: 50%;
+}
+
+.password-strength-strong {
+  background: var(--success);
+  width: 75%;
+}
+
+.password-strength-very-strong {
+  background: var(--success);
+  width: 100%;
+}
+
+/* Terms and conditions (for future enhancement) */
+.terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.terms-checkbox input[type="checkbox"] {
+  margin-top: var(--space-1);
+  accent-color: var(--primary-gold);
+}
+
+.terms-checkbox label {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.terms-checkbox a {
+  color: var(--primary-gold);
+  text-decoration: underline;
+}
+
+.terms-checkbox a:hover {
+  color: var(--primary-orange);
+}
+
+/* Success message for registration */
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-lg);
+  color: var(--success);
+  font-weight: 500;
+  margin-bottom: var(--space-6);
+  animation: slideInRight 0.3s ease-out;
+}
+
+.success-message i {
+  font-size: 1.1rem;
+}
+
+/* Registration benefits */
+.registration-benefits {
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  background: rgba(255, 215, 0, 0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.registration-benefits h3 {
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.9rem;
+  color: var(--gray-600);
+}
+
+.benefit-item i {
+  color: var(--primary-gold);
+  font-size: 0.8rem;
+}
+
+/* Mobile optimizations for register form */
+@media (max-width: 480px) {
+  .auth-form {
+    margin-bottom: var(--space-6);
+  }
+  
+  .form-group {
+    margin-bottom: var(--space-4);
+  }
+  
+  .registration-benefits {
+    margin-top: var(--space-6);
+    padding: var(--space-4);
+  }
+  
+  .benefits-list {
+    grid-template-columns: 1fr;
+  }
+}
