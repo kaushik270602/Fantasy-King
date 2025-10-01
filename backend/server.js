@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -17,9 +18,8 @@ app.use((req, res, next) => {
   
 
 
-mongoose.set('debug', true); // Enable Mongoose debugging
-//Kaushik-27
-mongoose.connect('mongodb+srv://kaushik270602:Kaushik-27@cluster0.ph6bm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.set('debug', true); 
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
